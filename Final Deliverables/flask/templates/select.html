@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Car Parking Space Prediction</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+      }
+
+      .navbar {
+        background-color: #f2f2f2;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+      }
+
+      .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+      }
+
+      .navbar-brand {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333333;
+        text-decoration: none;
+      }
+
+      .navbar-menu {
+        display: flex;
+        align-items: center;
+      }
+
+      .navbar-menu a {
+        color: #333333;
+        text-decoration: none;
+        padding: 10px 20px;
+        margin: 0 5px;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+      }
+
+      .navbar-menu a:hover {
+        background-color: #e0e0e0;
+      }
+
+      .container {
+        text-align: center;
+        margin-top: 60px;
+      }
+
+      .video-stream {
+        width: 100%;
+        max-width: 800px;
+      }
+
+      .predict-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+      }
+
+      .predict-button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="container">
+        <a class="navbar-brand" href="/">Car Parking System</a>
+        <div class="navbar-menu">
+          <a href="/login">Logout</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h1>Car Parking Space Prediction</h1>
+
+      <button class="predict-button" onclick="navigateToPredict()">
+        Predict
+      </button>
+    </div>
+
+    <script>
+      // Function to navigate to the predict route
+      function navigateToPredict() {
+        window.location.href = "{{ url_for('predict') }}";
+      }
+
+      // Auto-refresh the image every 5 seconds
+      setInterval(function () {
+        document.getElementById("parking-image").src =
+          "{{ url_for('predict') }}" + "?t=" + Date.now();
+      }, 5000);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Car Parking Space Prediction</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        text-align: center;
+      }
+
+      .video-wrapper {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        max-width: 800px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      }
+
+      .video-stream {
+        width: 100%;
+        height: auto;
+      }
+
+      .heading {
+        font-size: 24px;
+        margin-top: 20px;
+      }
+
+      .description {
+        font-size: 16px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="video-wrapper">
+        <div class="video-stream">
+          <img id="parking-image" src="" alt="Parking Spaces" />
+        </div>
+      </div>
+      <h2 class="heading">Car Parking Space Prediction</h2>
+      <p class="description">
+        Real-time video stream displaying the predicted parking spaces.
+      </p>
+    </div>
+  </body>
+</html>
